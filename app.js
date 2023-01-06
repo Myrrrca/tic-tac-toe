@@ -25,13 +25,71 @@ const checkBoardOnWin = (index) => {
   currentBoardCircles.sort();
   for (let i = 0; i < winOutcomes.length; i++) {
     if (
-      JSON.stringify(currentBoardCrosses) === JSON.stringify(winOutcomes[i])
+      JSON.stringify(currentBoardCrosses)
+        .replace("[", "")
+        .replace("]", "")
+        .replaceAll(",", "")
+        .includes(
+          JSON.stringify(winOutcomes[i][0])
+            .replace("[", "")
+            .replace("]", "")
+            .replaceAll(",", "")
+        ) &&
+      JSON.stringify(currentBoardCrosses)
+        .replace("[", "")
+        .replace("]", "")
+        .replaceAll(",", "")
+        .includes(
+          JSON.stringify(winOutcomes[i][1])
+            .replace("[", "")
+            .replace("]", "")
+            .replaceAll(",", "")
+        ) &&
+      JSON.stringify(currentBoardCrosses)
+        .replace("[", "")
+        .replace("]", "")
+        .replaceAll(",", "")
+        .includes(
+          JSON.stringify(winOutcomes[i][2])
+            .replace("[", "")
+            .replace("]", "")
+            .replaceAll(",", "")
+        )
     ) {
       alert("First player won");
       clickOnNewGameBtn();
     }
     if (
-      JSON.stringify(currentBoardCircles) === JSON.stringify(winOutcomes[i])
+      JSON.stringify(currentBoardCircles)
+        .replace("[", "")
+        .replace("]", "")
+        .replaceAll(",", "")
+        .includes(
+          JSON.stringify(winOutcomes[i][0])
+            .replace("[", "")
+            .replace("]", "")
+            .replaceAll(",", "")
+        ) &&
+      JSON.stringify(currentBoardCircles)
+        .replace("[", "")
+        .replace("]", "")
+        .replaceAll(",", "")
+        .includes(
+          JSON.stringify(winOutcomes[i][1])
+            .replace("[", "")
+            .replace("]", "")
+            .replaceAll(",", "")
+        ) &&
+      JSON.stringify(currentBoardCircles)
+        .replace("[", "")
+        .replace("]", "")
+        .replaceAll(",", "")
+        .includes(
+          JSON.stringify(winOutcomes[i][2])
+            .replace("[", "")
+            .replace("]", "")
+            .replaceAll(",", "")
+        )
     ) {
       alert("Second player won");
       clickOnNewGameBtn();
